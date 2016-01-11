@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Card" representedClassName="Card" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="colors" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="foil" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="foreignNames" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="magicCardsInfoCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="multiverseid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="prices" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="rarity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="set" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="collections" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Collection" inverseName="cards" inverseEntity="Collection" syncable="YES"/>
+    </entity>
+    <entity name="Collection" representedClassName="Collection" syncable="YES">
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Card" inverseName="collections" inverseEntity="Card" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friendsLogins" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="login" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="other" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reviews" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="tradeCollection" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Collection" syncable="YES"/>
+        <relationship name="wishCollection" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Collection" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Card" positionX="-63" positionY="-18" width="128" height="223"/>
+        <element name="Collection" positionX="54" positionY="242" width="128" height="73"/>
+        <element name="Person" positionX="196" positionY="9" width="128" height="193"/>
+    </elements>
+</model>
